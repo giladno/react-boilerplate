@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {name} = require('./package.json');
 
 const NODE_ENV = process.env.NODE_ENV=='development' && process.env.NODE_ENV || 'production';
@@ -8,7 +9,6 @@ module.exports = require('webpack-merge')({
     entry: ['babel-polyfill'],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
     },
     module: {
         loaders: [{
@@ -17,11 +17,11 @@ module.exports = require('webpack-merge')({
             loaders: ['babel-loader'],
             include: path.join(__dirname, 'src'),
         }, {
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
-        }, {
-            test: /\.less$/,
-            use: ['style-loader', 'css-loader', 'less-loader'],
+            test: /\.(less|css)$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'less-loader'],
+            }),
         }, {
             test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg)$/,
             loader: 'url-loader?limit=100000',
@@ -35,6 +35,10 @@ module.exports = require('webpack-merge')({
             appMountId: 'root',
             minify: {collapseWhitespace: true},
         }),
+        new ExtractTextPlugin({
+            filename: 'css/[name].[contenthash].css',
+            disable: NODE_ENV=='development',
+        }),
     ],
 }, {
     development: {
@@ -42,9 +46,13 @@ module.exports = require('webpack-merge')({
         devtool: 'cheap-module-eval-source-map',
         output: {
             publicPath: '/build/',
+            filename: 'bundle.js',
         },
     },
     production: {
+        output: {
+            filename: '[name].[chunkhash].js',
+        },
         plugins: [
             new webpack.optimize.UglifyJsPlugin({
                 comments: false,
