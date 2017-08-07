@@ -1,3 +1,4 @@
+require('./css/style.less');
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
