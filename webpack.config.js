@@ -14,7 +14,7 @@ module.exports = require('webpack-merge')({
         loaders: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loaders: ['babel-loader'],
+            loaders: ['babel-loader', 'eslint-loader'],
             include: path.join(__dirname, 'src'),
         }, {
             test: /\.(less|css)$/,
