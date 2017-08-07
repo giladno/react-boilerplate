@@ -23,11 +23,18 @@ module.exports = require('webpack-merge')({
                 use: ['css-loader', 'less-loader'],
             }),
         }, {
-            test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg)$/,
-            loader: 'url-loader?limit=100000',
+            test: /\.json$/,
+            loader: 'json-loader',
+        }, {
+            test: /\.(jpe?g|png|gif|woff2?|eot|ttf|svg)$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+            },
         }],
     },
     plugins: [
+        new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify(NODE_ENV)}}),
         new (require('html-webpack-plugin'))({
             inject: false,
             template: require('html-webpack-template'),
@@ -40,6 +47,9 @@ module.exports = require('webpack-merge')({
             disable: NODE_ENV=='development',
         }),
     ],
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
 }, {
     development: {
         entry: ['webpack-dev-server/client?http://localhost:3000'],
