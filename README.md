@@ -13,5 +13,5 @@ It doesn't contain any state management library simply because not all projects 
 - Images loader
 - CSS/Less support
 - Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
-- Simple `node.js` server with hot loader support
+- [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 - [ESLint](http://eslint.org/) rules

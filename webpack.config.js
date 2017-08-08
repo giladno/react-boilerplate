@@ -9,6 +9,7 @@ module.exports = require('webpack-merge')({
     entry: ['babel-polyfill'],
     output: {
         path: path.join(__dirname, 'dist'),
+        publicPath: '/',
     },
     module: {
         loaders: [{
@@ -27,10 +28,7 @@ module.exports = require('webpack-merge')({
             loader: 'json-loader',
         }, {
             test: /\.(jpe?g|png|gif|woff2?|eot|ttf|svg)$/,
-            loader: 'file-loader',
-            options: {
-                limit: 10000,
-            },
+            loader: 'file-loader?limit=10000',
         }],
     },
     plugins: [
@@ -52,11 +50,25 @@ module.exports = require('webpack-merge')({
     },
 }, {
     development: {
-        entry: ['webpack-dev-server/client?http://localhost:3000'],
-        devtool: 'cheap-module-eval-source-map',
+        entry: [
+            'react-hot-loader/patch',
+            'webpack-dev-server/client?http://localhost:3000',
+            'webpack/hot/only-dev-server',
+        ],
+        devtool: 'inline-source-map',
         output: {
-            publicPath: '/build/',
             filename: 'bundle.js',
+        },
+        plugins: [
+            new webpack.HotModuleReplacementPlugin(),
+            new webpack.NamedModulesPlugin(),
+            new webpack.NoEmitOnErrorsPlugin(),
+        ],
+        devServer: {
+            host: 'localhost',
+            port: 3000,
+            hot: true,
+            historyApiFallback: true,
         },
     },
     production: {
@@ -83,5 +95,5 @@ module.exports = require('webpack-merge')({
         ],
     },
 }[NODE_ENV], {
-    entry: ['./src/app.jsx'],
+    entry: ['./src/index.jsx'],
 });
