@@ -27,7 +27,7 @@ module.exports = require('webpack-merge')({
             loader: 'json-loader',
         }, {
             test: /\.(jpe?g|png|gif|woff2?|eot|ttf|svg)$/,
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
                 limit: 10000,
             },
@@ -43,7 +43,7 @@ module.exports = require('webpack-merge')({
             minify: {collapseWhitespace: true},
         }),
         new ExtractTextPlugin({
-            filename: 'css/[name].[contenthash].css',
+            filename: '[name].[contenthash].css',
             disable: NODE_ENV=='development',
         }),
     ],
