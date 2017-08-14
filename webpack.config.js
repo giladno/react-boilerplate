@@ -46,7 +46,7 @@ module.exports = require('webpack-merge')({
         }),
     ],
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.css', '.less'],
     },
 }, {
     development: {
