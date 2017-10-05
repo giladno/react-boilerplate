@@ -1,3 +1,4 @@
+require('normalize.css');
 require('./css/style.less');
 import React, {Component} from 'react';
 
