@@ -32,7 +32,10 @@ module.exports = require('webpack-merge')({
         }],
     },
     plugins: [
-        new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify(NODE_ENV)}}),
+        new webpack.DefinePlugin({
+            'process.env': {NODE_ENV: JSON.stringify(NODE_ENV)},
+            __DEV__: NODE_ENV=='development',
+        }),
         new (require('html-webpack-plugin'))({
             inject: false,
             template: require('html-webpack-template'),
@@ -52,8 +55,7 @@ module.exports = require('webpack-merge')({
     development: {
         entry: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
-            'webpack/hot/only-dev-server',
+            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
         ],
         devtool: 'inline-source-map',
         output: {
@@ -64,12 +66,6 @@ module.exports = require('webpack-merge')({
             new webpack.NamedModulesPlugin(),
             new webpack.NoEmitOnErrorsPlugin(),
         ],
-        devServer: {
-            host: 'localhost',
-            port: 3000,
-            hot: true,
-            historyApiFallback: true,
-        },
     },
     production: {
         output: {
