@@ -10,8 +10,9 @@ It doesn't contain any state management library simply because not all projects 
 ## What's included
 - A single [webpack](https://webpack.github.io/) script with shared, development and production parts
 - [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) in production to generate stamped css/js files
-- Images loader
-- CSS/Less support
+- Images/[CSS](https://github.com/webpack-contrib/css-loader)/[Less](https://github.com/webpack-contrib/less-loader) loaders
 - Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 - [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- [react-router](https://reacttraining.com/react-router/)
 - [ESLint](http://eslint.org/) rules
+- [express](https://expressjs.com/) based server with async/await support
