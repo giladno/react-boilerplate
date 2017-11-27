@@ -8,13 +8,7 @@ const app = (()=>{
     const ewrap = f=>{
         if (f.length>3)
             return f;
-        return (...args)=>{
-            try {
-                let ret = f(...args);
-                if (ret && typeof ret.catch=='function')
-                    ret.catch(args[args.length-1]);
-            } catch(err) { args[args.length-1](err); }
-        };
+        return (req, res, next)=>(async ()=>f(req, res, next))().catch(next);
     };
     let app = express();
     for (let fn of ['use', 'all', 'get', 'post', 'put', 'delete', 'head', 'options'])
