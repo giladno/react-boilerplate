@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const {name} = require('./package.json');
 
 const NODE_ENV = process.env.NODE_ENV=='development' && process.env.NODE_ENV || 'production';
@@ -72,20 +73,21 @@ module.exports = require('webpack-merge')({
             filename: '[name].[chunkhash].js',
         },
         plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-                comments: false,
-                compress: {
-                    warnings: false,
-                    dead_code: true,
-                    properties: true,
-                    conditionals: true,
-                    booleans: true,
-                    loops: true,
-                    unused: true,
-                    if_return: true,
-                    negate_iife: true,
-                    drop_console: true,
-                    passes: 2,
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        warnings: false,
+                        dead_code: true,
+                        properties: true,
+                        conditionals: true,
+                        booleans: true,
+                        loops: true,
+                        unused: true,
+                        if_return: true,
+                        negate_iife: true,
+                        drop_console: true,
+                        passes: 2,
+                    },
                 },
             }),
         ],
