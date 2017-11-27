@@ -37,6 +37,11 @@ if (__DEV__)
     });
 }
 
+app.get('/ping', async (req, res)=>{
+    await new Promise(resolve=>setTimeout(resolve, 1000));
+    res.send('pong');
+});
+
 if (__DEV__)
 {
     let webpack = require('webpack');
