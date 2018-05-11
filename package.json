@@ -1,148 +1,109 @@
 {
-  "name": "react-boilerplate",
-  "version": "1.0.0",
-  "description": "Simple react boilerplate",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "clean": "$(npm bin)/rimraf ./dist",
-    "prebuild": "npm run clean",
-    "build": "NODE_ENV=production $(npm bin)/webpack --colors",
-    "lint": "$(npm bin)/eslint src/**/*.jsx"
-  },
-  "keywords": [],
-  "author": "Gilad Novik <gilad@novik.ca>",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.16.2",
-    "longjohn": "^0.2.12",
-    "morgan": "^1.9.0",
-    "normalize.css": "^7.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.8",
-    "eslint": "^4.15.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-react": "^7.5.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.6",
-    "html-webpack-plugin": "^2.30.1",
-    "html-webpack-template": "^6.1.0",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
-    "react-hot-loader": "next",
-    "rimraf": "^2.6.2",
-    "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.6",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "^2.0.4",
-    "webpack-hot-middleware": "^2.21.0",
-    "webpack-merge": "^4.1.1"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": false,
-          "targets": {
-            "chrome": "60"
-          }
-        }
-      ],
-      "react"
-    ],
-    "plugins": [
-      "transform-async-to-generator",
-      "transform-object-rest-spread",
-      "transform-class-properties",
-      "transform-decorators-legacy",
-      "react-hot-loader/babel"
-    ]
-  },
-  "eslintConfig": {
-    "globals": {
-      "__DEV__": true
+    "name": "react-boilerplate",
+    "version": "1.0.0",
+    "description": "Simple react boilerplate",
+    "scripts": {
+        "start": "$(npm bin)/webpack-dev-server --hot",
+        "clean": "rm -rf ./dist",
+        "prebuild": "npm run clean",
+        "build": "NODE_ENV=production $(npm bin)/webpack --colors"
     },
-    "rules": {
-      "no-console": 0,
-      "strict": 0,
-      "comma-dangle": [
-        1,
-        "always-multiline"
-      ],
-      "quotes": [
-        1,
-        "single"
-      ],
-      "linebreak-style": [
-        2,
-        "unix"
-      ],
-      "semi": [
-        1,
-        "always"
-      ],
-      "no-empty": [
-        1,
-        {
-          "allowEmptyCatch": true
-        }
-      ],
-      "no-unused-vars": [
-        1,
-        {
-          "args": "after-used",
-          "argsIgnorePattern": "^_"
-        }
-      ],
-      "max-len": [
-        1,
-        120,
-        4,
-        {
-          "ignoreUrls": true,
-          "ignorePattern": "/(.*)/;",
-          "ignoreRegExpLiterals": true
-        }
-      ],
-      "react/prop-types": 0,
-      "react/display-name": 0,
-      "react/jsx-no-bind": 2,
-      "react/no-render-return-value": 0
+    "keywords": [],
+    "author": "Gilad Novik <gilad@novik.ca>",
+    "license": "MIT",
+    "dependencies": {
+        "normalize.css": "^8.0.0",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2",
+        "react-router-dom": "^4.2.2"
     },
-    "env": {
-      "amd": true,
-      "es6": true,
-      "browser": true,
-      "node": true
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.3",
+        "babel-loader": "^7.1.4",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "css-loader": "^0.28.11",
+        "dotenv-webpack": "^1.5.5",
+        "eslint": "^4.19.1",
+        "eslint-loader": "^2.0.0",
+        "eslint-plugin-react": "^7.7.0",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.2.0",
+        "html-webpack-template": "^6.2.0",
+        "less": "^3.0.4",
+        "less-loader": "^4.1.0",
+        "mini-css-extract-plugin": "^0.4.0",
+        "uglifyjs-webpack-plugin": "^1.2.5",
+        "webpack": "^4.8.1",
+        "webpack-cli": "^2.1.3",
+        "webpack-dev-server": "^3.1.4"
     },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      }
+    "babel": {
+        "presets": [
+            [
+                "env",
+                {
+                    "modules": false,
+                    "targets": {
+                        "chrome": "60"
+                    }
+                }
+            ],
+            "react"
+        ],
+        "plugins": ["transform-decorators-legacy", "transform-class-properties", "transform-object-rest-spread"]
     },
-    "plugins": [
-      "react"
-    ],
-    "parser": "babel-eslint"
-  }
+    "eslintConfig": {
+        "globals": {
+            "__DEV__": true,
+            "React": true
+        },
+        "rules": {
+            "no-console": 0,
+            "strict": 0,
+            "comma-dangle": [1, "always-multiline"],
+            "quotes": [1, "single"],
+            "linebreak-style": [2, "unix"],
+            "semi": [1, "always"],
+            "no-empty": [
+                1,
+                {
+                    "allowEmptyCatch": true
+                }
+            ],
+            "max-len": [
+                1,
+                120,
+                4,
+                {
+                    "ignoreUrls": true,
+                    "ignorePattern": "/(.*)/;",
+                    "ignoreRegExpLiterals": true
+                }
+            ],
+            "react/prop-types": 0,
+            "react/display-name": 0,
+            "react/jsx-no-bind": 2,
+            "react/no-render-return-value": 0
+        },
+        "env": {
+            "amd": true,
+            "es6": true,
+            "commonjs": true,
+            "browser": true
+        },
+        "extends": ["eslint:recommended", "plugin:react/recommended"],
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true
+            }
+        },
+        "plugins": ["react"],
+        "parser": "babel-eslint"
+    }
 }
