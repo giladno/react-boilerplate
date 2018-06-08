@@ -29,8 +29,16 @@ module.exports = {
                 include: path.join(__dirname, 'src'),
             },
             {
-                test: /\.(less|css)$/,
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.less$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.(sass|scss)$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(jpe?g|png|gif|woff2?|eot|ttf|svg)$/,
@@ -90,7 +98,7 @@ module.exports = {
     ],
     resolve: {
         modules: [path.resolve('./src'), 'node_modules'],
-        extensions: ['.js', '.jsx', '.css', '.less'],
+        extensions: ['.js', '.jsx', '.css', '.less', '.sass', '.scss'],
     },
     devServer: {
         host: '0.0.0.0',
