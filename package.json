@@ -11,6 +11,14 @@
     "keywords": [],
     "author": "Gilad Novik <gilad@novik.ca>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/giladno/react-boilerplate.git"
+    },
+    "bugs": {
+        "url": "https://github.com/giladno/react-boilerplate/issues"
+    },
+    "homepage": "https://github.com/giladno/react-boilerplate#readme",
     "dependencies": {
         "normalize.css": "^8.0.0",
         "react": "^16.4.0",

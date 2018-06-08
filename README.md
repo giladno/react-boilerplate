@@ -18,3 +18,7 @@ It doesn't contain any state management library simply because not all projects 
 -   [react-router](https://reacttraining.com/react-router/)
 -   [ESLint](http://eslint.org/) rules
 -   [DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin
+
+## License
+
+MIT
