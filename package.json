@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Simple react boilerplate",
     "scripts": {
-        "start": "$(npm bin)/webpack-dev-server --hot",
+        "start": "$(npm bin)/webpack-dev-server",
         "clean": "rm -rf ./dist",
         "prebuild": "npm run clean",
         "build": "NODE_ENV=production $(npm bin)/webpack --colors"
