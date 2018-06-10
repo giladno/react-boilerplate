@@ -80,6 +80,7 @@
         "rules": {
             "no-console": 0,
             "strict": 0,
+            "no-unused-vars": 1,
             "comma-dangle": [
                 1,
                 "always-multiline"
@@ -114,7 +115,7 @@
             ],
             "react/prop-types": 0,
             "react/display-name": 0,
-            "react/jsx-no-bind": 2,
+            "react/jsx-no-bind": 1,
             "react/no-render-return-value": 0
         },
         "env": {
