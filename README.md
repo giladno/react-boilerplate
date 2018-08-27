@@ -16,6 +16,7 @@ It doesn't contain any state management library simply because not all projects 
 -   Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 -   HMR
 -   [react-router](https://reacttraining.com/react-router/)
+-   [styled-jsx](https://github.com/zeit/styled-jsx)
 -   [ESLint](http://eslint.org/) rules
 -   [DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin
 
