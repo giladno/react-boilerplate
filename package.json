@@ -39,6 +39,7 @@
         "dotenv-webpack": "^1.5.7",
         "eslint": "^5.4.0",
         "eslint-loader": "^2.1.0",
+        "eslint-plugin-node": "^7.0.1",
         "eslint-plugin-react": "^7.11.1",
         "file-loader": "^2.0.0",
         "html-webpack-plugin": "^3.2.0",
@@ -73,71 +74,5 @@
             "transform-class-properties",
             "transform-object-rest-spread"
         ]
-    },
-    "eslintConfig": {
-        "globals": {
-            "__DEV__": true,
-            "React": true
-        },
-        "rules": {
-            "no-console": 0,
-            "strict": 0,
-            "no-unused-vars": 1,
-            "comma-dangle": [
-                1,
-                "always-multiline"
-            ],
-            "quotes": [
-                1,
-                "single"
-            ],
-            "linebreak-style": [
-                2,
-                "unix"
-            ],
-            "semi": [
-                1,
-                "always"
-            ],
-            "no-empty": [
-                1,
-                {
-                    "allowEmptyCatch": true
-                }
-            ],
-            "max-len": [
-                1,
-                120,
-                4,
-                {
-                    "ignoreUrls": true,
-                    "ignorePattern": "/(.*)/;",
-                    "ignoreRegExpLiterals": true
-                }
-            ],
-            "react/prop-types": 0,
-            "react/display-name": 0,
-            "react/jsx-no-bind": 1,
-            "react/no-render-return-value": 0
-        },
-        "env": {
-            "amd": true,
-            "es6": true,
-            "commonjs": true,
-            "browser": true
-        },
-        "extends": [
-            "eslint:recommended",
-            "plugin:react/recommended"
-        ],
-        "parserOptions": {
-            "ecmaFeatures": {
-                "jsx": true
-            }
-        },
-        "plugins": [
-            "react"
-        ],
-        "parser": "babel-eslint"
     }
 }
