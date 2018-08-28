@@ -1,10 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-
-const {name} = require('./package.json');
 
 const NODE_ENV = (process.env.NODE_ENV == 'development' && process.env.NODE_ENV) || 'production';
 
@@ -47,7 +43,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new Dotenv({
+        new require('dotenv-webpack')({
             path: `./.env.${NODE_ENV}`,
         }),
         new webpack.DefinePlugin({
@@ -57,7 +53,7 @@ module.exports = {
         new (require('html-webpack-plugin'))({
             inject: false,
             template: require('html-webpack-template'),
-            title: name,
+            title: require('./package.json').name,
             appMountId: 'root',
             mobile: true,
             minify: {collapseWhitespace: true},
@@ -76,7 +72,7 @@ module.exports = {
                 new webpack.NoEmitOnErrorsPlugin(),
             ],
             production: [
-                new UglifyJsPlugin({
+                new require('uglifyjs-webpack-plugin')({
                     uglifyOptions: {
                         compress: {
                             warnings: false,
