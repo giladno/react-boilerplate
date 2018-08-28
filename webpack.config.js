@@ -10,7 +10,7 @@ const NODE_ENV = (process.env.NODE_ENV == 'development' && process.env.NODE_ENV)
 
 module.exports = {
     mode: NODE_ENV,
-    entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['@babel/polyfill', './src/index.jsx'],
     devtool: {development: 'inline-source-map'}[NODE_ENV],
     output: {
         path: path.join(__dirname, 'dist'),
