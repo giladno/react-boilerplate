@@ -43,7 +43,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new require('dotenv-webpack')({
+        new (require('dotenv-webpack'))({
             path: `./.env.${NODE_ENV}`,
         }),
         new webpack.DefinePlugin({
@@ -63,6 +63,7 @@ module.exports = {
             chunkFilename: '[id].css',
         }),
         new webpack.ProvidePlugin({
+            _: 'lodash',
             React: 'react',
         }),
         ...{
@@ -72,7 +73,7 @@ module.exports = {
                 new webpack.NoEmitOnErrorsPlugin(),
             ],
             production: [
-                new require('uglifyjs-webpack-plugin')({
+                new (require('uglifyjs-webpack-plugin'))({
                     uglifyOptions: {
                         compress: {
                             warnings: false,

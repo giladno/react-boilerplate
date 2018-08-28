@@ -17,6 +17,7 @@ It doesn't contain any state management library simply because not all projects 
 -   HMR
 -   [react-router](https://reacttraining.com/react-router/)
 -   [styled-jsx](https://github.com/zeit/styled-jsx)
+-   [Lodash](https://lodash.com/)
 -   [ESLint](http://eslint.org/) rules
 -   [DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin
 

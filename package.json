@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/giladno/react-boilerplate#readme",
     "dependencies": {
+        "lodash": "^4.17.10",
         "normalize.css": "^8.0.0",
         "react": "^16.4.2",
         "react-dom": "^16.4.2",
@@ -35,6 +36,7 @@
         "@babel/preset-react": "^7.0.0",
         "babel-eslint": "^9.0.0",
         "babel-loader": "^8.0.0",
+        "babel-plugin-lodash": "^3.3.4",
         "css-loader": "^1.0.0",
         "dotenv-webpack": "^1.5.7",
         "eslint": "^5.4.0",
@@ -69,6 +71,7 @@
             "@babel/preset-react"
         ],
         "plugins": [
+            "lodash",
             "styled-jsx/babel",
             [
                 "@babel/plugin-proposal-decorators",
