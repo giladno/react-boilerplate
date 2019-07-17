@@ -73,21 +73,10 @@ module.exports = {
                 new webpack.NoEmitOnErrorsPlugin(),
             ],
             production: [
-                new (require('uglifyjs-webpack-plugin'))({
-                    uglifyOptions: {
-                        compress: {
-                            warnings: false,
-                            dead_code: true,
-                            properties: true,
-                            conditionals: true,
-                            booleans: true,
-                            loops: true,
-                            unused: true,
-                            if_return: true,
-                            negate_iife: true,
-                            drop_console: true,
-                            passes: 2,
-                        },
+                new (require('terser-webpack-plugin'))({
+                    parallel: true,
+                    terserOptions: {
+                        ecma: 6,
                     },
                 }),
             ],
