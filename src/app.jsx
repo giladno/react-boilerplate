@@ -1,24 +1,18 @@
 require('normalize.css');
 require('./css/style.less');
+import React from 'react';
 import {Route} from 'react-router-dom';
 
-const Main = () => (
-    <div>
-        <h1>Hello, world</h1>
-        <style jsx>{`
-            div {
-                text-align: center;
-            }
-        `}</style>
-    </div>
-);
+const Main = React.lazy(() => import('./main'));
 
 export class App extends React.Component {
     render() {
         return (
-            <Route>
-                <Route exact path="/" component={Main} />
-            </Route>
+            <React.Suspense fallback={<div>Loading...</div>}>
+                <Route>
+                    <Route exact path="/" component={Main} />
+                </Route>
+            </React.Suspense>
         );
     }
 }

@@ -11,15 +11,16 @@ It doesn't contain any state management library simply because not all projects 
 ## What's included
 
 -   A single [webpack](https://webpack.github.io/) script
--   [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) in production
+-   [normalize.css](https://necolas.github.io/normalize.css/)
+-   [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) and [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) in production
 -   Images/[CSS](https://github.com/webpack-contrib/css-loader)/[Less](https://github.com/webpack-contrib/less-loader)/[Sass](https://github.com/webpack-contrib/sass-loader) loaders
 -   Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 -   HMR
 -   [react-router](https://reacttraining.com/react-router/)
 -   [styled-jsx](https://github.com/zeit/styled-jsx)
--   [Lodash](https://lodash.com/)
 -   [ESLint](http://eslint.org/) rules
 -   [DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin
+-   [Code-Splitting](https://reactjs.org/docs/code-splitting.html)
 
 ## License
 

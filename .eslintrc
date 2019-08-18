@@ -7,6 +7,18 @@
     "plugins": ["node"],
     "extends": ["eslint:recommended", "plugin:node/recommended"],
     "rules": {
-        "node/no-unpublished-require": 0
+        "node/no-unpublished-require": [
+            "warn",
+            {
+                "allowModules": [
+                    "webpack",
+                    "mini-css-extract-plugin",
+                    "dotenv-webpack",
+                    "html-webpack-plugin",
+                    "html-webpack-template",
+                    "terser-webpack-plugin"
+                ]
+            }
+        ]
     }
 }

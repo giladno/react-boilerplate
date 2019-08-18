@@ -56,14 +56,14 @@ module.exports = {
             title: require('./package.json').name,
             appMountId: 'root',
             mobile: true,
+            favicon: path.resolve(__dirname, './static/favicon.ico'),
             minify: {collapseWhitespace: true},
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css',
+            filename: '[name].[hash].css',
+            chunkFilename: '[id].[hash].css',
         }),
         new webpack.ProvidePlugin({
-            _: 'lodash',
             React: 'react',
         }),
         ...{
@@ -91,5 +91,16 @@ module.exports = {
         hot: true,
         open: true,
         historyApiFallback: true,
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /\/node_modules\/(react|react-dom|react-router-dom)\//,
+                    name: 'vendor',
+                    chunks: 'all',
+                },
+            },
+        },
     },
 };

@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "Simple react boilerplate",
     "scripts": {
-        "start": "$(npm bin)/webpack-dev-server",
+        "start": "webpack-dev-server",
         "clean": "rm -rf ./dist",
         "prebuild": "npm run clean",
-        "build": "NODE_ENV=production $(npm bin)/webpack --colors"
+        "build": "NODE_ENV=production webpack --colors"
     },
     "keywords": [],
     "author": "Gilad Novik <gilad@novik.ca>",
@@ -20,7 +20,6 @@
     },
     "homepage": "https://github.com/giladno/react-boilerplate#readme",
     "dependencies": {
-        "lodash": "^4.17.15",
         "normalize.css": "^8.0.1",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
