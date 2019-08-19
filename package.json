@@ -20,17 +20,20 @@
     },
     "homepage": "https://github.com/giladno/react-boilerplate#readme",
     "dependencies": {
+        "core-js": "^3.2.1",
         "normalize.css": "^8.0.1",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "react-router-dom": "^5.0.1"
+        "react-router-dom": "^5.0.1",
+        "regenerator-runtime": "^0.13.3"
     },
     "devDependencies": {
         "@babel/core": "^7.5.5",
         "@babel/plugin-proposal-class-properties": "^7.5.5",
         "@babel/plugin-proposal-decorators": "^7.4.4",
         "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-        "@babel/polyfill": "^7.4.4",
+        "@babel/plugin-transform-react-constant-elements": "^7.5.0",
+        "@babel/plugin-transform-runtime": "^7.5.5",
         "@babel/preset-env": "^7.5.5",
         "@babel/preset-react": "^7.0.0",
         "babel-eslint": "^10.0.2",
@@ -55,41 +58,5 @@
         "webpack": "^4.39.2",
         "webpack-cli": "^3.3.7",
         "webpack-dev-server": "^3.8.0"
-    },
-    "babel": {
-        "presets": [
-            [
-                "@babel/preset-env",
-                {
-                    "modules": false,
-                    "targets": {
-                        "chrome": "60"
-                    }
-                }
-            ],
-            "@babel/preset-react"
-        ],
-        "plugins": [
-            "lodash",
-            "styled-jsx/babel",
-            [
-                "@babel/plugin-proposal-decorators",
-                {
-                    "legacy": true
-                }
-            ],
-            [
-                "@babel/plugin-proposal-class-properties",
-                {
-                    "loose": true
-                }
-            ],
-            [
-                "@babel/plugin-proposal-object-rest-spread",
-                {
-                    "loose": true
-                }
-            ]
-        ]
     }
 }

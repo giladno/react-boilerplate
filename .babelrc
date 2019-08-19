@@ -1,0 +1,43 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": false,
+                "useBuiltIns": "usage",
+                "corejs": 3,
+                "targets": {
+                    "chrome": "60"
+                }
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "lodash",
+        "styled-jsx/babel",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-object-rest-spread",
+            {
+                "loose": true
+            }
+        ]
+    ],
+    "env": {
+        "production": {
+            "plugins": ["@babel/plugin-transform-react-constant-elements", "@babel/plugin-transform-runtime"]
+        }
+    }
+}
