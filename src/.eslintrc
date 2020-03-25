@@ -1,9 +1,5 @@
 {
     "root": true,
-    "globals": {
-        "__DEV__": true,
-        "React": true
-    },
     "rules": {
         "no-console": 0,
         "strict": 0,

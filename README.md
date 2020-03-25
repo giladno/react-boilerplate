@@ -10,17 +10,18 @@ It doesn't contain any state management library simply because not all projects 
 
 ## What's included
 
--   A single [webpack](https://webpack.github.io/) script
+-   [parcel](https://parceljs.org/) bundler</del>
 -   [normalize.css](https://necolas.github.io/normalize.css/)
--   [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) and [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) in production
--   Images/[CSS](https://github.com/webpack-contrib/css-loader)/[Less](https://github.com/webpack-contrib/less-loader)/[Sass](https://github.com/webpack-contrib/sass-loader) loaders
--   Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
--   HMR
 -   [react-router](https://reacttraining.com/react-router/)
--   [styled-jsx](https://github.com/zeit/styled-jsx)
 -   [ESLint](http://eslint.org/) rules
--   [DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin
--   [Code-Splitting](https://reactjs.org/docs/code-splitting.html)
+-   <del>A single [webpack](https://webpack.github.io/) script</del>
+-   <del>[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) and [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) in production</del>
+-   <del>Images/[CSS](https://github.com/webpack-contrib/css-loader)/[Less](https://github.com/webpack-contrib/less-loader)/[Sass](https://github.com/webpack-contrib/sass-loader) loaders</del>
+-   <del>Automatically generate HTML index file using [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)</del>
+-   <del>HMR</del>
+-   <del>[styled-jsx](https://github.com/zeit/styled-jsx)</del>
+-   <del>[DotEnv](https://github.com/mrsteele/dotenv-webpack) plugin</del>
+-   <del>[Code-Splitting](https://reactjs.org/docs/code-splitting.html)</del>
 
 ## License
 

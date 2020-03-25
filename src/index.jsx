@@ -1,16 +1,11 @@
-import 'core-js/stable';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import 'regenerator-runtime/runtime';
+import {App} from './app';
 
-const render = () => {
-    const {App} = require('./app.jsx');
-    ReactDOM.render(
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>,
-        document.getElementById('root')
-    );
-};
-render();
-if (module.hot) module.hot.accept('./app.jsx', render);
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById('root')
+);
