@@ -10,7 +10,7 @@ It doesn't contain any state management library simply because not all projects 
 
 ## What's included
 
--   [parcel](https://parceljs.org/) bundler</del>
+-   [parcel](https://parceljs.org/) bundler
 -   [normalize.css](https://necolas.github.io/normalize.css/)
 -   [react-router](https://reacttraining.com/react-router/)
 -   [ESLint](http://eslint.org/) rules
